@@ -1,0 +1,23 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> <a class="navbar-brand" href="#">News</a> </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li routerLinkActive="active"><a href="#"><i class="glyphicon glyphicon-paperclip"></i></a></li>
+                <li routerLinkActive="active"><a href="#"><i class="glyphicon glyphicon-list"></i></a></li>
+                <li routerLinkActive="active"><a href="#"><i class="glyphicon glyphicon-user"></i></a></li>
+                <li routerLinkActive="active"><a href="#"><i class="glyphicon glyphicon-usd"></i></a></li>
+                <li routerLinkActive="active"><a href="#"><i class="glyphicon glyphicon-cog"></i></a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right" *ngIf="!auth">
+                <li routerLinkActive="active"><a routerLink="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li routerLinkActive="active"><a routerLink="/signin"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right" *ngIf="auth">
+                <li routerLinkActive="active"><a routerLink="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                
+            </ul>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,34 @@
+.container .jumbotron, .container-fluid .jumbotron {
+    margin-top: 50px;
+}
+.container{
+    margin-top: 50px;
+}
+.left-menu {
+    width:20%;
+    height: 100%;
+    position: fixed;
+}
+.carousel-inner{
+    height: 100%;
+    width: 100%;
+}
+.clear{
+    clear:both;
+}
+.heading{
+    font-size:14px;
+}
+.heading b{
+    color:red;
+}
+.container-table {
+    height: 100%;
+}
+.vertical-center-row {
+    display: table-cell;
+    vertical-align: middle;
+}
+.clear{
+    clear:both;
+}
