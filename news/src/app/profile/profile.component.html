@@ -3,22 +3,26 @@
         <h4 class="bg-primary">Personal Image</h4> <img src="../../assets/friendly+face.jpg" class="img-responsive img-border" /> </div>
     <div class="col-md-9 col-sm-12">
         <h4 class="bg-primary">Personal Information</h4>
-        <div class="form-group col-md-6">
-            <input type="text" placeholder="usename" class="form-control" required [(ngModel)]="username" /> </div>
-        <div class="form-group col-md-6">
-            <input type="text" placeholder="firstname" class="form-control" required [(ngModel)]="firstname" /> </div>
-        <div class="form-group col-md-6">
-            <input type="text" placeholder="lastname" class="form-control" required [(ngModel)]="lastname" /> </div>
-        <div class="form-group col-md-6">
-            <input type="email" placeholder="Email-id" class="form-control" required [(ngModel)]="emailid" /> </div>
-        <div class="form-group col-md-4">
-            <input type="password" placeholder="Current Password" class="form-control" required /> </div>
-        <div class="form-group col-md-4">
-            <input type="password" placeholder="Password" class="form-control" required /> </div>
-        <div class="form-group col-md-4">
-            <input type="password" placeholder="Confirm Password" class="form-control" required /> </div>
-        <div class="form-group col-md-12 pull-right">
-            <input type="submit" value="Save" class="btn btn-success" /> </div>
+        <div class="col-md-12">
+            <form>
+                <div class="form-group col-md-6">
+                    <input type="text" placeholder="usename" name="username" class="form-control" required [(ngModel)]="username" /> </div>
+                <div class="form-group col-md-6">
+                    <input type="text" placeholder="firstname" name="firstname" class="form-control" required [(ngModel)]="firstname" /> </div>
+                <div class="form-group col-md-6">
+                    <input type="text" placeholder="lastname" name="lastname" class="form-control" required [(ngModel)]="lastname" /> </div>
+                <div class="form-group col-md-6">
+                    <input type="email" placeholder="Email-id" name="emailid" class="form-control" required [(ngModel)]="emailid" /> </div>
+                <div class="form-group col-md-4">
+                    <input type="password" placeholder="Current Password" class="form-control" required /> </div>
+                <div class="form-group col-md-4">
+                    <input type="password" placeholder="Password" class="form-control" required /> </div>
+                <div class="form-group col-md-4">
+                    <input type="password" placeholder="Confirm Password" class="form-control" required /> </div>
+                <div class="form-group col-md-12">
+                    <input type="submit" value="Save" class="btn btn-block btn-success" /> </div>
+            </form>
+        </div>
     </div>
 </div>
 <div class="row">
@@ -57,12 +61,23 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Modal Header</h4> </div>
+                    <h4 class="modal-title">Add your Experience</h4> </div>
                 <div class="modal-body">
-                    <p>Some text in the modal.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <form>
+                        <div class="form-group col-md-6">
+                            <input type="text" placeholder="Company" name="company" class="form-control" required /> </div>
+                        <div class="form-group col-md-6">
+                            <input type="date" placeholder="Date of Joining" name="doj" class="form-control" required /> </div>
+                        <div class="form-group col-md-6">
+                            <input type="text" placeholder="Designation" name="designation" class="form-control" required /> </div>
+                        <div class="form-group col-md-6">
+                            <input type="number" placeholder="Contact number" name="phno" class="form-control" required /> </div>
+                        <div class="form-group col-md-12">
+                            <textarea  placeholder="Short description" name="description" class="form-control" required>Short description</textarea></div>
+                        <div class="form-group col-md-12">
+                            <input type="submit" value="Save Experience" class="btn btn-block btn-success" /> </div>
+                    </form>
+                    <div class="clear"></div>
                 </div>
             </div>
         </div>
@@ -70,7 +85,7 @@
 </div>
 <div class="row">
     <div class="col-md-12 col-sm-12">
-        <h4 class="bg-primary">Projects Details<i class="glyphicon glyphicon-plus pull-right"></i></h4>
+        <h4 class="bg-primary">Projects Details<i class="glyphicon glyphicon-plus pull-right" data-toggle="modal" data-target="#myModalproject"></i></h4>
         <div class="list-group">
             <a href="#" class="list-group-item">
                 <h4 class="list-group-item-heading">First List Group Item Heading</h4>
@@ -84,6 +99,30 @@
                 <h4 class="list-group-item-heading">Third List Group Item Heading</h4>
                 <p class="list-group-item-text">List Group Item Text</p>
             </a>
+        </div>
+    </div>
+    <div id="myModalproject" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Add your Project</h4> </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group col-md-6">
+                            <input type="text" placeholder="Project name" name="company" class="form-control" required /> </div>
+                        
+                        <div class="form-group col-md-6">
+                            <input type="text" placeholder="Designation" name="designation" class="form-control" required /> </div>
+                        <div class="form-group col-md-12">
+                            <textarea  placeholder="Short description" name="description" class="form-control" required>Short description</textarea></div>
+                        <div class="form-group col-md-12">
+                            <input type="submit" value="Save Project" class="btn btn-block btn-success" /> </div>
+                    </form>
+                    <div class="clear"></div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

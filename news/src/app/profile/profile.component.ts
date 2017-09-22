@@ -3,6 +3,7 @@ import { CoolLocalStorage } from 'angular2-cool-storage';
 import { CommonService } from '../shared/common.service';
 import { SigninService } from '../signin/signin.service';
 import {Router} from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-profile',

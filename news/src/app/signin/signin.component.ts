@@ -6,6 +6,7 @@ import { CommonService } from '../shared/common.service';
 import { NgModule } from '@angular/core';
 import { CoolLocalStorage } from 'angular2-cool-storage';
 import {Router} from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @Injectable()
 @NgModule({
