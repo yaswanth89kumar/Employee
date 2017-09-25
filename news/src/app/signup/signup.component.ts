@@ -15,6 +15,7 @@ import { NgForm } from '@angular/forms';
 export class SignupComponent implements OnInit {
     
  private router;
+ private auth = false;
  private error=[];
  localStorage: CoolLocalStorage;
 
@@ -29,6 +30,11 @@ export class SignupComponent implements OnInit {
   }
 
   ngOnInit() {
+      var authinfo: any = this.commonService.getUser();
+      if(authinfo){
+        this.router.navigate(['profile']);
+        this.auth = true;
+      }
   }
   register(form: NgForm) {
       const value = form.value;
