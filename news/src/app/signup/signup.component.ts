@@ -46,7 +46,6 @@ export class SignupComponent implements OnInit {
             else {
                 this.error = data.error;
             }
-          console.log(data);
         });
   }
 

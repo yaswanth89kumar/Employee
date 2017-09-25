@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { CoolLocalStorage } from 'angular2-cool-storage';
 import { CommonService } from '../shared/common.service';
 import { SigninService } from '../signin/signin.service';
+import { SignupService } from '../signup/signup.service';
 import {Router} from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-profile',
@@ -16,9 +18,12 @@ export class ProfileComponent implements OnInit {
   firstname: string = "";
   lastname: string = "";
   emailid: string = "";
+  password: string = "";
   private router;
+    private error=[];
+    private success=[];
     private auth = false;
-  constructor(private signinservice: SigninService, localStorage: CoolLocalStorage, private commonService: CommonService, router: Router) { 
+  constructor(private signinservice: SigninService, localStorage: CoolLocalStorage, private commonService: CommonService, router: Router, private signupservice: SignupService) { 
     this.localStorage = localStorage;
     this.router= router;
     this.auth = true;
@@ -41,5 +46,23 @@ export class ProfileComponent implements OnInit {
           this.router.navigate(['signin']);
       }
   }
+    
+  personaldetailsedit(form: NgForm) {
+      const value = form.value;
+      this.signupservice.profileUpdate(value)
+        .subscribe(data => {
+            if(Object.keys(data.error).length) {
+               this.error = data.error;
+            }
+            else if(Object.keys(data.success).length) {
+               this.success = data.success;
+              this.password = "";
+            }
+            else {
+               this.router.navigate(['profile']); 
+            }
+        });
+  }
+    
 
 }

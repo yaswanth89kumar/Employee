@@ -21,5 +21,13 @@ export class SignupService {
     return this.http.post(this.hostname+'register.php', this.body, {headers: this.headers})
     .map((res:Response) => res.json());
   }
+  profileUpdate(auth) {
+      this.body = "username="+auth.username+"&password="+auth.password+"&currentpassword="+auth.currentpassword+"&firstname="+auth.firstname+"&lastname="+auth.lastname+"&email="+auth.emailid+"&applicationid="+this.applicationid;
+    this.headers = new Headers();
+    this.headers.append('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+     
+    return this.http.post(this.hostname+'profileupdate.php', this.body, {headers: this.headers})
+    .map((res:Response) => res.json());
+  }
 
 }
