@@ -7,6 +7,7 @@ import { NgModule } from '@angular/core';
 import { CoolLocalStorage } from 'angular2-cool-storage';
 import {Router} from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { NgForm } from '@angular/forms';
 
 @Injectable()
 @NgModule({
@@ -47,8 +48,9 @@ localStorage: CoolLocalStorage;
       }
     }
     
-  getUser() {
-    this.signinservice.getUser(this.username, this.password)
+  getUser(form: NgForm) {
+    const value = form.value;
+    this.signinservice.getUser(value)
         .subscribe(data => {
             if(!Object.keys(data.error).length) {
                 this.localStorage.setObject('authinfo', {

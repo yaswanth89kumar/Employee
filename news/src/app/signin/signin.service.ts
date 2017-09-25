@@ -13,8 +13,8 @@ export class SigninService {
         this.applicationid = 'JAPCAP100025NTR';
     }
 
-  getUser(username, password) {
-    this.body = "username="+username+"&password="+password+"&applicationid="+this.applicationid;
+  getUser(auth) {
+    this.body = "username="+auth.username+"&password="+auth.password+"&applicationid="+this.applicationid;
     this.headers = new Headers();
     this.headers.append('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
      
