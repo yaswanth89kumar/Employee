@@ -15,17 +15,18 @@ export class ProjectService {
 
   getProjects(empid) {
     this.body = "empid="+empid+"&applicationid="+this.applicationid;
-    this.headers = new Headers();
-    this.headers.append('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
-    return this.http.post(this.hostname+'getprojects.php', this.body, {headers: this.headers})
-    .map((res:Response) => res.json());
+    return this.callpostService('getprojects.php');
   }
   getAchievements(empid) {
     this.body = "empid="+empid+"&applicationid="+this.applicationid;
+    return this.callpostService('getachievements.php');
+  }
+    
+  callpostService(filename) {
     this.headers = new Headers();
     this.headers.append('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
-    return this.http.post(this.hostname+'getachievements.php', this.body, {headers: this.headers})
-    .map((res:Response) => res.json());
+    return this.http.post(this.hostname+filename, this.body, {headers: this.headers})
+    .map((res:Response) => res.json());  
   }
   
 
