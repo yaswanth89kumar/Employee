@@ -26,6 +26,7 @@ private empid = "";
   private router;
     private error=[];
     private projects=[];
+    private achievements=[];
     private success=[];
     private auth = false;
   constructor(private signinservice: SigninService, localStorage: CoolLocalStorage, private commonService: CommonService, router: Router, private signupservice: SignupService, private projectService: ProjectService) { 
@@ -49,6 +50,7 @@ private empid = "";
             });
           this.auth = true;
           this.getProjects();
+          this.getAchievements();
       }
       else {
           this.auth = false;
@@ -84,6 +86,20 @@ private empid = "";
             }
             else {
                this.projects = data.result;
+            }
+        });
+  }
+    getAchievements() {
+      this.projectService.getAchievements(this.empid)
+        .subscribe(data => {
+            if(Object.keys(data.error).length) {
+               this.error = data.error;
+            }
+            else if(Object.keys(data.success).length) {
+               this.success = data.success;
+            }
+            else {
+               this.achievements = data.result;
             }
         });
   }
