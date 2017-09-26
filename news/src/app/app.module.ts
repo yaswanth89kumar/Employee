@@ -11,6 +11,7 @@ import { SigninComponent } from './signin/signin.component';
 import { HomescreenComponent } from './homescreen/homescreen.component';
 import { SigninService } from './signin/signin.service';
 import { SignupService } from './signup/signup.service';
+import { ProjectService } from './shared/projects.service';
 import { CommonService } from './shared/common.service';
 import { CoolLocalStorage } from 'angular2-cool-storage';
 import { ProfileComponent } from './profile/profile.component';
@@ -30,7 +31,7 @@ import { ProfileComponent } from './profile/profile.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [SigninService, CoolLocalStorage, CommonService, SignupService],
+  providers: [SigninService, CoolLocalStorage, CommonService, SignupService, ProjectService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
